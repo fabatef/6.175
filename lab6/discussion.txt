@@ -1,0 +1,141 @@
+1. 	*	ERROR: Executing unsupported instruction at pc: 00004000. Exiting
+
+	*	This is the result of non-branch/jump instructions causing branch misprediction. Specifially, the above error is caused by a SW instruction. When SW is in doExecute stage, there will be misprediction since PPC= PC. So, the redirection EHR will update the PPC to be eInst.addr, which in the case of stores is the address in DMem where the content of the source register should be written. Therefore, on the next cycle, doFetch fetches the content of IMem[eInst.addr] instead of a valid instruction at PC + 4. When the fetched Invalid instruction makes it into the doExecute stage, an unsupported instruction error will be raised. 
+		
+	*	This doesn't happen in the PC + 4 or BTB case because non-branch instructions will never cause a misprediction since the BTB always predicts PC + 4 for non-branch instructions. And, PC + 4 only mispredicts for branch/jump instructions.
+		
+	*	If a misprediction happens, check if eInst.iType is a branch/jump instruction or not. If it is, then do the redirection with eInst.addr, if not, then redirect with PC + 4.
+	
+2.	The global epoch and pc are both Ehrs and the rules that write them use different ports. The use of BypassFifos for the intermediate bundles between pipeline stages insures concurrent execution because as soon as there is any entry in the first Fetch-Decode FIFO, it flies out to the next rule that deques it in the same cycle then enques an entry for the next stage, and so on along the pipeline. 
+
+That is a good analysis. I would also have accepted "I added display statement, and they do fire together".
+
+3.	1 cycle. When misprediction happens, doExecute writes the correct address into PcReg[1] in that cycle. The write becomes available to doFetch at pcReg[0] on the next cycle. 
+
+That is correct, but I think the spirit of the question was more :how many cycle
+will it take to go back to the doExecute where it should be, in case of
+misprediction. Though the question is ambiguous. 
+
+4.	2 cycles. The instruction behind has to wait for 1 cycle while the instruction ahead is in doMemory stage. Then it has to wait for an additional cycle until the destination register is removed in doWriteBack. Then, there will be no stall on the third cycle. 
+
+5. 					Cycles 			Insts			IPC
+					
+	median			5419			4015			0.741
+	
+	multiply		22518			20893			0.928
+	
+	qsort			181706			123928			0.686
+	
+	tower			6799			6096			0.897
+	
+	vvad			2711			2408			0.888
+
+	
+6.	*	In Decode and Execute stage
+
+	*	Decode stage to get the pc prediction from the BHT
+	
+	*	In Decode stage to update the pc for the Fetch stage.
+	
+	*	No. The BHT prediction in the Decode stage is  the ppc for the following stages after it.
+	
+	
+	
+	
+	*	Use a 3-port Ehr and let the Decode stage write into port 1, the Execute stage write into port 2 and let the Fetch stage read port [0].
+	
+	*	Yes. A global epoch to keep track of predictions from Decode stage.
+	
+	*	When redirection happens, flip the global decode Epoch and write BHT's prediction in one of pcReg's ports so that Fetch can pick up the suggested instruction on the next cycle.
+	
+	*	The ppc of the current instruction might change if the BHT's prediction for ppc and the current instruction's ppc don't match
+	
+	
+	
+	
+	*	By updating the BHT in Execute stage for branch instructions.
+	
+	*	Execute stage
+	
+	*	Execute stage
+	
+	*	Via the 'update' interface method of the BHT module 
+	
+	*	Branch Instructions (dInst.iType == Br)
+	
+	*	Hopefully see some increase in IPC for the benchmarks.
+	
+	
+7.					IPC_BHT			IPC_without_BHT		% improved
+						
+	bpred_bht		0.718				0.833				-13.8	
+
+I'm concerned that this happened. I expected it to perform at least as well as it did without BHT. I think the extra cycles are coming in because when Decode redirects, the instruction is killed, and nothing is enqued for the stages ahead. So, four of the stages don't fire until the next cycle. This scenario doesn't happen without the BHT, because as long as the program is not done, there is always a bundle in the in-between stages FIFOs.
+
+(Yes but this is a useless bundle in case of without bht right? Because everything get thrown away at exec)
+
+Side Note: When I tried testing using CF Fifos for in-between stages instead of Bypass Fifos, I saw a considerable decrease in the number of cycles with the use of BHT than without.
+
+				IPC_BHT				IPC_without_BHT		% improved
+						
+bpred_bht		1007/2456= 0.41		1007/3028= 0.33		24.2
+
+
+So, my best guess is that using Bypass Fifos between stages grants a larger performance improvement in terms of reducing the number of cycles than does using a BHT.	
+
+Yes definitely, :). But using a bypass bifo throughout the design cost a huge amount in term of critical cycle (it's almost as if you were doing a one cycle now :))
+More precisely it is as if you were doing decode regfetch execute and memory in one atomic rule.
+
+
+8.	No improvment. (Using BypassFifos)
+
+				IPC_BHT			IPC_without_BHT		% improved
+						
+bpred_j			0.99				0.99				0
+	
+bpred_j_noloop	0.915				0.915				0
+	
+	
+	
+9.						Cycles			Insts			IPC			% improved
+	
+	median				4942			4015			0.812			9.58
+	
+	multiply			25640			20893			0.815			-1.22
+	
+	qsort				164443			123928			0.754			9.91
+	
+	tower				6529			6096			0.934			4.12
+	
+	vvad				2709			2408			0.889			0.11
+	
+	
+10.	I lost track..probably over 20 hours :/
+
+Excercise 5:
+
+				IPC with redirection	IPC without redirection		% improved
+				from RegRead			from RegRead		
+						
+bpred_j			286/335 = 0.854			286/361 = 0.792				7.82											
+	
+	
+Remark:
+why did you comment your jump code in decode in SixStageBHT?
+It sounded reasonable
+
+In you bonus: you put Jump in your bht, I believe this is not useful: the bht
+is only used to know if a branch does jump or not.  In case of a jump you know
+that it jumps for sure :). So you are filling your bht with entries that are not
+required.
+
+The use of bypass fifo is fair architecturally speaking, though it increases a
+lot your critical path: now your critical path goes literaly through all the
+stages, right?
+
+Note:
+About:
+//If BHT made the wrong call and the actual ppc is the one from fetch stage, flip the dec epoch back and don't flip execEpoch
+I am not sure I understand, but I would be happy to follow up with you if you explain what you meant to me, and possibly argue why it would be incorrect to do so?
+
+125/125

@@ -1,0 +1,28 @@
+1. No. The SignedVsUnsigned test bench fails when it is run.
+
+2. multiply_unsigned is a parametrized function, so a particular use-case must be specified for the compiler to know the size of the input/output bit vecotrs. A compilation error results without the first line because neither of the two functions are instantiated. However, if the test function is instantiated, the compiler can infer the type and size of the arguments to the other function, so instantiating both is not necessary.  
+
+3. multiply_by_adding is an unsigned multiplier. 
+
+4.
+Current Bits | Previous Bit | Original Booth Encoding | Radix-4 Booth Encoding
+-------------+--------------+-------------------------+-----------------------
+    00       |      0       |           00            |         00
+    00       |      1       |           0+            |         0+
+    01       |      0       |           +-            |         0+
+    01       |      1       |           +0            |         +0
+    10       |      0       |           -0            |         -0
+    10       |      1       |           -+            |         0-
+    11       |      0       |           0-            |         0-
+    11       |      1       |           00            |         00
+
+5. No. For example, 101 0 becomes -0- in Radix-8 encoding. 
+Yes, because it will reduce the number of cycles by a half (repeat = n/4)
+
+Small error here, a Radix-8 will read bits 3 by 3, and not 4 by 4, so it would repeat n/3 instead of n/2, so it would reduce by 3/2.
+
+(-0.25)
+
+6. 5.5 hours
+
+24.75/25 => 99%

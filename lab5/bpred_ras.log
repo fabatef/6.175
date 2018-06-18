@@ -1,0 +1,1416 @@
+make -C bluesim --no-print-directory run
+LD_PRELOAD=libSegFault.so SEGFAULT_USE_ALTSTACK=1 SEGFAULT_OUTPUT_NAME=bin/bsimexe-segv-output.txt  ./bin/ubuntu.exe ; retcode=$?; exit $retcode
+Start testbench:
+XsimTop starting
+[init_xsim:61]
+[init_xsim:61]
+Processor startedReceived software req to start pc
+
+pc: 00000200 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle          0 ----------------------------------------------------
+pc: 00000204 inst: (0a0e0463) expanded: beq r28 r 0 0xa8
+Branch instruction here
+missed_ppc: 00000204 inst: (09080300000081000000833) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h00000204, addr: 'h0000020c, mispredict: True, brTaken: True }
+
+Cycle          1 ----------------------------------------------------
+pc: 0000020c inst: (00008493) expanded: addi r 9 = r 1 0x0
+
+Cycle          2 ----------------------------------------------------
+pc: 00000210 inst: (00200e13) expanded: addi r28 = r 0 0x2
+
+Cycle          3 ----------------------------------------------------
+pc: 00000214 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle          4 ----------------------------------------------------
+pc: 00000218 inst: (00700e13) expanded: addi r28 = r 0 0x7
+Branch instruction here
+missed_ppc: 00000218 inst: (090805000000860000008a3) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h00000218, addr: 'h00000228, mispredict: True, brTaken: True }
+
+Cycle          5 ----------------------------------------------------
+pc: 00000228 inst: (00008913) expanded: addi r18 = r 1 0x0
+
+Cycle          6 ----------------------------------------------------
+pc: 0000022c inst: (00300e13) expanded: addi r28 = r 0 0x3
+
+Cycle          7 ----------------------------------------------------
+pc: 00000230 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle          8 ----------------------------------------------------
+pc: 00000234 inst: (00800e13) expanded: addi r28 = r 0 0x8
+Branch instruction here
+missed_ppc: 00000234 inst: (0908050000008d000000913) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h00000234, addr: 'h00000244, mispredict: True, brTaken: True }
+
+Cycle          9 ----------------------------------------------------
+pc: 00000244 inst: (00008993) expanded: addi r19 = r 1 0x0
+
+Cycle         10 ----------------------------------------------------
+pc: 00000248 inst: (00400e13) expanded: addi r28 = r 0 0x4
+
+Cycle         11 ----------------------------------------------------
+pc: 0000024c inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle         12 ----------------------------------------------------
+pc: 00000250 inst: (00900e13) expanded: addi r28 = r 0 0x9
+Branch instruction here
+missed_ppc: 00000250 inst: (09080500000094000000983) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h00000250, addr: 'h00000260, mispredict: True, brTaken: True }
+
+Cycle         13 ----------------------------------------------------
+pc: 00000260 inst: (00008a13) expanded: addi r20 = r 1 0x0
+
+Cycle         14 ----------------------------------------------------
+pc: 00000264 inst: (00500e13) expanded: addi r28 = r 0 0x5
+
+Cycle         15 ----------------------------------------------------
+pc: 00000268 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle         16 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+Branch instruction here
+missed_ppc: 0000026c inst: (0908050000009b0000009f3) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h0000026c, addr: 'h0000027c, mispredict: True, brTaken: True }
+
+Cycle         17 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+
+Cycle         18 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle         19 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle         20 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (090805000000a2000000a63) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h00000288, addr: 'h00000298, mispredict: True, brTaken: True }
+
+Cycle         21 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+
+Cycle         22 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         23 ----------------------------------------------------
+pc: 000002a0 inst: (01c01663) expanded: bne r 0 r28 0xc
+Branch instruction here
+missed_ppc: 000002a0 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle         24 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle         25 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle         26 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (090803000000a4000000a63) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h00000290, addr: 'h00000298, mispredict: True, brTaken: True }
+
+Cycle         27 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+
+Cycle         28 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         29 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle         30 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle         31 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         32 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+missed_ppc: 00000298 inst: (0a0000000000a60000009b3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h0000026c, mispredict: True, brTaken: True }
+
+Cycle         33 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+
+Cycle         34 ----------------------------------------------------
+pc: 00000270 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle         35 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+Branch instruction here
+missed_ppc: 00000274 inst: (0908030000009d0000009f3) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h00000274, addr: 'h0000027c, mispredict: True, brTaken: True }
+
+Cycle         36 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+
+Cycle         37 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle         38 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle         39 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle         40 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         41 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle         42 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle         43 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle         44 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle         45 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         46 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle         47 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle         48 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         49 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+Branch instruction here
+missed_ppc: 0000026c inst: (0a0000000000a60000009d3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h00000274, mispredict: True, brTaken: True }
+
+Cycle         50 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+
+Cycle         51 ----------------------------------------------------
+pc: 00000278 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         52 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+missed_ppc: 0000027c inst: (0a00000000009f000000943) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h0000027c, addr: 'h00000250, mispredict: True, brTaken: True }
+
+Cycle         53 ----------------------------------------------------
+pc: 00000250 inst: (00900e13) expanded: addi r28 = r 0 0x9
+
+Cycle         54 ----------------------------------------------------
+pc: 00000254 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle         55 ----------------------------------------------------
+pc: 00000258 inst: (00098093) expanded: addi r 1 = r19 0x0
+Branch instruction here
+missed_ppc: 00000258 inst: (09080300000096000000983) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h00000258, addr: 'h00000260, mispredict: True, brTaken: True }
+
+Cycle         56 ----------------------------------------------------
+pc: 00000260 inst: (00008a13) expanded: addi r20 = r 1 0x0
+
+Cycle         57 ----------------------------------------------------
+pc: 00000264 inst: (00500e13) expanded: addi r28 = r 0 0x5
+
+Cycle         58 ----------------------------------------------------
+pc: 00000268 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle         59 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle         60 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle         61 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle         62 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle         63 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         64 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle         65 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle         66 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle         67 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle         68 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         69 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle         70 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle         71 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         72 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+Branch instruction here
+missed_ppc: 00000274 inst: (0a0000000000a60000009b3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h0000026c, mispredict: True, brTaken: True }
+
+Cycle         73 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+
+Cycle         74 ----------------------------------------------------
+pc: 00000270 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle         75 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle         76 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle         77 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle         78 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle         79 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         80 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle         81 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle         82 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle         83 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle         84 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         85 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle         86 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle         87 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         88 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+Branch instruction here
+missed_ppc: 0000026c inst: (0a0000000000a60000009d3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h00000274, mispredict: True, brTaken: True }
+
+Cycle         89 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+
+Cycle         90 ----------------------------------------------------
+pc: 00000278 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         91 ----------------------------------------------------
+pc: 00000250 inst: (00900e13) expanded: addi r28 = r 0 0x9
+Branch instruction here
+missed_ppc: 00000250 inst: (0a00000000009f000000963) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h0000027c, addr: 'h00000258, mispredict: True, brTaken: True }
+
+Cycle         92 ----------------------------------------------------
+pc: 00000258 inst: (00098093) expanded: addi r 1 = r19 0x0
+
+Cycle         93 ----------------------------------------------------
+pc: 0000025c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle         94 ----------------------------------------------------
+pc: 00000260 inst: (00008a13) expanded: addi r20 = r 1 0x0
+Branch instruction here
+missed_ppc: 00000260 inst: (0a0000000000980000008d3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000260, addr: 'h00000234, mispredict: True, brTaken: True }
+
+Cycle         95 ----------------------------------------------------
+pc: 00000234 inst: (00800e13) expanded: addi r28 = r 0 0x8
+
+Cycle         96 ----------------------------------------------------
+pc: 00000238 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle         97 ----------------------------------------------------
+pc: 0000023c inst: (00090093) expanded: addi r 1 = r18 0x0
+Branch instruction here
+missed_ppc: 0000023c inst: (0908030000008f000000913) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h0000023c, addr: 'h00000244, mispredict: True, brTaken: True }
+
+Cycle         98 ----------------------------------------------------
+pc: 00000244 inst: (00008993) expanded: addi r19 = r 1 0x0
+
+Cycle         99 ----------------------------------------------------
+pc: 00000248 inst: (00400e13) expanded: addi r28 = r 0 0x4
+
+Cycle        100 ----------------------------------------------------
+pc: 0000024c inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        101 ----------------------------------------------------
+pc: 00000260 inst: (00008a13) expanded: addi r20 = r 1 0x0
+Branch instruction here
+
+Cycle        102 ----------------------------------------------------
+pc: 00000264 inst: (00500e13) expanded: addi r28 = r 0 0x5
+
+Cycle        103 ----------------------------------------------------
+pc: 00000268 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        104 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        105 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        106 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        107 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        108 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        109 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        110 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        111 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        112 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        113 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        114 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        115 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        116 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        117 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+Branch instruction here
+missed_ppc: 00000274 inst: (0a0000000000a60000009b3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h0000026c, mispredict: True, brTaken: True }
+
+Cycle        118 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+
+Cycle        119 ----------------------------------------------------
+pc: 00000270 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        120 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        121 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        122 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        123 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        124 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        125 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        126 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        127 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        128 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        129 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        130 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        131 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        132 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        133 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+Branch instruction here
+missed_ppc: 0000026c inst: (0a0000000000a60000009d3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h00000274, mispredict: True, brTaken: True }
+
+Cycle        134 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+
+Cycle        135 ----------------------------------------------------
+pc: 00000278 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        136 ----------------------------------------------------
+pc: 00000258 inst: (00098093) expanded: addi r 1 = r19 0x0
+Branch instruction here
+missed_ppc: 00000258 inst: (0a00000000009f000000943) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h0000027c, addr: 'h00000250, mispredict: True, brTaken: True }
+
+Cycle        137 ----------------------------------------------------
+pc: 00000250 inst: (00900e13) expanded: addi r28 = r 0 0x9
+
+Cycle        138 ----------------------------------------------------
+pc: 00000254 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        139 ----------------------------------------------------
+pc: 00000260 inst: (00008a13) expanded: addi r20 = r 1 0x0
+Branch instruction here
+
+Cycle        140 ----------------------------------------------------
+pc: 00000264 inst: (00500e13) expanded: addi r28 = r 0 0x5
+
+Cycle        141 ----------------------------------------------------
+pc: 00000268 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        142 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        143 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        144 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        145 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        146 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        147 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        148 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        149 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        150 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        151 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        152 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        153 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        154 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        155 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+Branch instruction here
+missed_ppc: 00000274 inst: (0a0000000000a60000009b3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h0000026c, mispredict: True, brTaken: True }
+
+Cycle        156 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+
+Cycle        157 ----------------------------------------------------
+pc: 00000270 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        158 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        159 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        160 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        161 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        162 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        163 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        164 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        165 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        166 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        167 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        168 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        169 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        170 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        171 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+Branch instruction here
+missed_ppc: 0000026c inst: (0a0000000000a60000009d3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h00000274, mispredict: True, brTaken: True }
+
+Cycle        172 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+
+Cycle        173 ----------------------------------------------------
+pc: 00000278 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        174 ----------------------------------------------------
+pc: 00000250 inst: (00900e13) expanded: addi r28 = r 0 0x9
+Branch instruction here
+missed_ppc: 00000250 inst: (0a00000000009f000000963) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h0000027c, addr: 'h00000258, mispredict: True, brTaken: True }
+
+Cycle        175 ----------------------------------------------------
+pc: 00000258 inst: (00098093) expanded: addi r 1 = r19 0x0
+
+Cycle        176 ----------------------------------------------------
+pc: 0000025c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        177 ----------------------------------------------------
+pc: 00000234 inst: (00800e13) expanded: addi r28 = r 0 0x8
+Branch instruction here
+missed_ppc: 00000234 inst: (0a0000000000980000008f3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000260, addr: 'h0000023c, mispredict: True, brTaken: True }
+
+Cycle        178 ----------------------------------------------------
+pc: 0000023c inst: (00090093) expanded: addi r 1 = r18 0x0
+
+Cycle        179 ----------------------------------------------------
+pc: 00000240 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        180 ----------------------------------------------------
+pc: 00000244 inst: (00008993) expanded: addi r19 = r 1 0x0
+Branch instruction here
+missed_ppc: 00000244 inst: (0a000000000091000000863) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000244, addr: 'h00000218, mispredict: True, brTaken: True }
+
+Cycle        181 ----------------------------------------------------
+pc: 00000218 inst: (00700e13) expanded: addi r28 = r 0 0x7
+
+Cycle        182 ----------------------------------------------------
+pc: 0000021c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        183 ----------------------------------------------------
+pc: 00000220 inst: (00048093) expanded: addi r 1 = r 9 0x0
+Branch instruction here
+missed_ppc: 00000220 inst: (090803000000880000008a3) branch mispredicted: ExecInst { iType: J, dst: tagged Valid 'h01, csr: tagged Invalid , data: 'h00000220, addr: 'h00000228, mispredict: True, brTaken: True }
+
+Cycle        184 ----------------------------------------------------
+pc: 00000228 inst: (00008913) expanded: addi r18 = r 1 0x0
+
+Cycle        185 ----------------------------------------------------
+pc: 0000022c inst: (00300e13) expanded: addi r28 = r 0 0x3
+
+Cycle        186 ----------------------------------------------------
+pc: 00000230 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        187 ----------------------------------------------------
+pc: 00000244 inst: (00008993) expanded: addi r19 = r 1 0x0
+Branch instruction here
+
+Cycle        188 ----------------------------------------------------
+pc: 00000248 inst: (00400e13) expanded: addi r28 = r 0 0x4
+
+Cycle        189 ----------------------------------------------------
+pc: 0000024c inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        190 ----------------------------------------------------
+pc: 00000260 inst: (00008a13) expanded: addi r20 = r 1 0x0
+Branch instruction here
+
+Cycle        191 ----------------------------------------------------
+pc: 00000264 inst: (00500e13) expanded: addi r28 = r 0 0x5
+
+Cycle        192 ----------------------------------------------------
+pc: 00000268 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        193 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        194 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        195 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        196 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        197 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        198 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        199 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        200 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        201 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        202 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        203 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        204 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        205 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        206 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+Branch instruction here
+missed_ppc: 00000274 inst: (0a0000000000a60000009b3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h0000026c, mispredict: True, brTaken: True }
+
+Cycle        207 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+
+Cycle        208 ----------------------------------------------------
+pc: 00000270 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        209 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        210 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        211 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        212 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        213 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        214 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        215 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        216 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        217 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        218 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        219 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        220 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        221 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        222 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+Branch instruction here
+missed_ppc: 0000026c inst: (0a0000000000a60000009d3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h00000274, mispredict: True, brTaken: True }
+
+Cycle        223 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+
+Cycle        224 ----------------------------------------------------
+pc: 00000278 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        225 ----------------------------------------------------
+pc: 00000258 inst: (00098093) expanded: addi r 1 = r19 0x0
+Branch instruction here
+missed_ppc: 00000258 inst: (0a00000000009f000000943) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h0000027c, addr: 'h00000250, mispredict: True, brTaken: True }
+
+Cycle        226 ----------------------------------------------------
+pc: 00000250 inst: (00900e13) expanded: addi r28 = r 0 0x9
+
+Cycle        227 ----------------------------------------------------
+pc: 00000254 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        228 ----------------------------------------------------
+pc: 00000260 inst: (00008a13) expanded: addi r20 = r 1 0x0
+Branch instruction here
+
+Cycle        229 ----------------------------------------------------
+pc: 00000264 inst: (00500e13) expanded: addi r28 = r 0 0x5
+
+Cycle        230 ----------------------------------------------------
+pc: 00000268 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        231 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        232 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        233 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        234 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        235 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        236 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        237 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        238 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        239 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        240 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        241 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        242 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        243 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        244 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+Branch instruction here
+missed_ppc: 00000274 inst: (0a0000000000a60000009b3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h0000026c, mispredict: True, brTaken: True }
+
+Cycle        245 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+
+Cycle        246 ----------------------------------------------------
+pc: 00000270 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        247 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        248 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        249 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        250 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        251 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        252 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        253 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        254 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        255 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        256 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        257 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        258 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        259 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        260 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+Branch instruction here
+missed_ppc: 0000026c inst: (0a0000000000a60000009d3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h00000274, mispredict: True, brTaken: True }
+
+Cycle        261 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+
+Cycle        262 ----------------------------------------------------
+pc: 00000278 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        263 ----------------------------------------------------
+pc: 00000250 inst: (00900e13) expanded: addi r28 = r 0 0x9
+Branch instruction here
+missed_ppc: 00000250 inst: (0a00000000009f000000963) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h0000027c, addr: 'h00000258, mispredict: True, brTaken: True }
+
+Cycle        264 ----------------------------------------------------
+pc: 00000258 inst: (00098093) expanded: addi r 1 = r19 0x0
+
+Cycle        265 ----------------------------------------------------
+pc: 0000025c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        266 ----------------------------------------------------
+pc: 0000023c inst: (00090093) expanded: addi r 1 = r18 0x0
+Branch instruction here
+missed_ppc: 0000023c inst: (0a0000000000980000008d3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000260, addr: 'h00000234, mispredict: True, brTaken: True }
+
+Cycle        267 ----------------------------------------------------
+pc: 00000234 inst: (00800e13) expanded: addi r28 = r 0 0x8
+
+Cycle        268 ----------------------------------------------------
+pc: 00000238 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        269 ----------------------------------------------------
+pc: 00000244 inst: (00008993) expanded: addi r19 = r 1 0x0
+Branch instruction here
+
+Cycle        270 ----------------------------------------------------
+pc: 00000248 inst: (00400e13) expanded: addi r28 = r 0 0x4
+
+Cycle        271 ----------------------------------------------------
+pc: 0000024c inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        272 ----------------------------------------------------
+pc: 00000260 inst: (00008a13) expanded: addi r20 = r 1 0x0
+Branch instruction here
+
+Cycle        273 ----------------------------------------------------
+pc: 00000264 inst: (00500e13) expanded: addi r28 = r 0 0x5
+
+Cycle        274 ----------------------------------------------------
+pc: 00000268 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        275 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        276 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        277 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        278 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        279 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        280 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        281 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        282 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        283 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        284 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        285 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        286 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        287 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        288 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+Branch instruction here
+missed_ppc: 00000274 inst: (0a0000000000a60000009b3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h0000026c, mispredict: True, brTaken: True }
+
+Cycle        289 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+
+Cycle        290 ----------------------------------------------------
+pc: 00000270 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        291 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        292 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        293 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        294 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        295 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        296 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        297 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        298 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        299 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        300 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        301 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        302 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        303 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        304 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+Branch instruction here
+missed_ppc: 0000026c inst: (0a0000000000a60000009d3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h00000274, mispredict: True, brTaken: True }
+
+Cycle        305 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+
+Cycle        306 ----------------------------------------------------
+pc: 00000278 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        307 ----------------------------------------------------
+pc: 00000258 inst: (00098093) expanded: addi r 1 = r19 0x0
+Branch instruction here
+missed_ppc: 00000258 inst: (0a00000000009f000000943) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h0000027c, addr: 'h00000250, mispredict: True, brTaken: True }
+
+Cycle        308 ----------------------------------------------------
+pc: 00000250 inst: (00900e13) expanded: addi r28 = r 0 0x9
+
+Cycle        309 ----------------------------------------------------
+pc: 00000254 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        310 ----------------------------------------------------
+pc: 00000260 inst: (00008a13) expanded: addi r20 = r 1 0x0
+Branch instruction here
+
+Cycle        311 ----------------------------------------------------
+pc: 00000264 inst: (00500e13) expanded: addi r28 = r 0 0x5
+
+Cycle        312 ----------------------------------------------------
+pc: 00000268 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        313 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        314 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        315 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        316 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        317 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        318 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        319 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        320 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        321 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        322 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        323 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        324 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        325 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        326 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+Branch instruction here
+missed_ppc: 00000274 inst: (0a0000000000a60000009b3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h0000026c, mispredict: True, brTaken: True }
+
+Cycle        327 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+
+Cycle        328 ----------------------------------------------------
+pc: 00000270 inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        329 ----------------------------------------------------
+pc: 0000027c inst: (00008a93) expanded: addi r21 = r 1 0x0
+Branch instruction here
+
+Cycle        330 ----------------------------------------------------
+pc: 00000280 inst: (00600e13) expanded: addi r28 = r 0 0x6
+
+Cycle        331 ----------------------------------------------------
+pc: 00000284 inst: (014000ef) expanded: jal r 1 0x14
+
+Cycle        332 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        333 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        334 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+Branch instruction here
+missed_ppc: 00000290 inst: (0a0000000000a8000000a23) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000288, mispredict: True, brTaken: True }
+
+Cycle        335 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+
+Cycle        336 ----------------------------------------------------
+pc: 0000028c inst: (00c000ef) expanded: jal r 1 0xc
+
+Cycle        337 ----------------------------------------------------
+pc: 00000298 inst: (00000e13) expanded: addi r28 = r 0 0x0
+Branch instruction here
+
+Cycle        338 ----------------------------------------------------
+pc: 0000029c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        339 ----------------------------------------------------
+pc: 00000288 inst: (00b00e13) expanded: addi r28 = r 0 0xb
+Branch instruction here
+missed_ppc: 00000288 inst: (0a0000000000a8000000a43) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h000002a0, addr: 'h00000290, mispredict: True, brTaken: True }
+
+Cycle        340 ----------------------------------------------------
+pc: 00000290 inst: (000a8093) expanded: addi r 1 = r21 0x0
+
+Cycle        341 ----------------------------------------------------
+pc: 00000294 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        342 ----------------------------------------------------
+pc: 0000026c inst: (00a00e13) expanded: addi r28 = r 0 0xa
+Branch instruction here
+missed_ppc: 0000026c inst: (0a0000000000a60000009d3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000298, addr: 'h00000274, mispredict: True, brTaken: True }
+
+Cycle        343 ----------------------------------------------------
+pc: 00000274 inst: (000a0093) expanded: addi r 1 = r20 0x0
+
+Cycle        344 ----------------------------------------------------
+pc: 00000278 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        345 ----------------------------------------------------
+pc: 00000250 inst: (00900e13) expanded: addi r28 = r 0 0x9
+Branch instruction here
+missed_ppc: 00000250 inst: (0a00000000009f000000963) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h0000027c, addr: 'h00000258, mispredict: True, brTaken: True }
+
+Cycle        346 ----------------------------------------------------
+pc: 00000258 inst: (00098093) expanded: addi r 1 = r19 0x0
+
+Cycle        347 ----------------------------------------------------
+pc: 0000025c inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        348 ----------------------------------------------------
+pc: 00000234 inst: (00800e13) expanded: addi r28 = r 0 0x8
+Branch instruction here
+missed_ppc: 00000234 inst: (0a0000000000980000008f3) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000260, addr: 'h0000023c, mispredict: True, brTaken: True }
+
+Cycle        349 ----------------------------------------------------
+pc: 0000023c inst: (00090093) expanded: addi r 1 = r18 0x0
+
+Cycle        350 ----------------------------------------------------
+pc: 00000240 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        351 ----------------------------------------------------
+pc: 00000218 inst: (00700e13) expanded: addi r28 = r 0 0x7
+Branch instruction here
+missed_ppc: 00000218 inst: (0a000000000091000000883) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000244, addr: 'h00000220, mispredict: True, brTaken: True }
+
+Cycle        352 ----------------------------------------------------
+pc: 00000220 inst: (00048093) expanded: addi r 1 = r 9 0x0
+
+Cycle        353 ----------------------------------------------------
+pc: 00000224 inst: (00008067) expanded: jalr r 0 [r 1 0x0]
+
+Cycle        354 ----------------------------------------------------
+pc: 00000228 inst: (00008913) expanded: addi r18 = r 1 0x0
+Branch instruction here
+missed_ppc: 00000228 inst: (0a00000000008a000000813) branch mispredicted: ExecInst { iType: Jr, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000228, addr: 'h00000204, mispredict: True, brTaken: True }
+
+Cycle        355 ----------------------------------------------------
+pc: 00000204 inst: (0a0e0463) expanded: beq r28 r 0 0xa8
+
+Cycle        356 ----------------------------------------------------
+pc: 00000208 inst: (0a00006f) expanded: jal r 0 0xa0
+Branch instruction here
+missed_ppc: 00000208 inst: (0c40280000002a000000ab3) branch mispredicted: ExecInst { iType: Br, dst: tagged Invalid , csr: tagged Invalid , data: 'h000000a8, addr: 'h000002ac, mispredict: True, brTaken: True }
+
+Cycle        357 ----------------------------------------------------
+pc: 000002ac inst: (00000e13) expanded: addi r28 = r 0 0x0
+
+Cycle        358 ----------------------------------------------------
+pc: 000002b0 inst: (0040006f) expanded: jal r 0 0x4
+
+Cycle        359 ----------------------------------------------------
+pc: 000002b4 inst: (c0002573) expanded: csrrs r10 csr0xc00 r 0
+Branch instruction here
+
+Cycle        360 ----------------------------------------------------
+pc: 000002b8 inst: (c02025f3) expanded: csrrs r11 csr0xc02 r 0
+
+Cycle        361 ----------------------------------------------------
+pc: 000002bc inst: (01051613) expanded: slli r12 = r10 0x10
+
+Cycle        362 ----------------------------------------------------
+pc: 000002c0 inst: (01065613) expanded: srli r12 = r12 0x10
+
+Cycle        363 ----------------------------------------------------
+pc: 000002c4 inst: (000206b7) expanded: lui r13 0x20000
+
+Cycle        364 ----------------------------------------------------
+pc: 000002c8 inst: (00d666b3) expanded: or r13 = r12 r13
+
+Cycle        365 ----------------------------------------------------
+pc: 000002cc inst: (78069073) expanded: csrrw r 0 csr0x780 r13
+
+Cycle        366 ----------------------------------------------------
+pc: 000002d0 inst: (01055613) expanded: srli r12 = r10 0x10
+
+Cycle        367 ----------------------------------------------------
+pc: 000002d4 inst: (000306b7) expanded: lui r13 0x30000
+
+Cycle        368 ----------------------------------------------------
+pc: 000002d8 inst: (00d666b3) expanded: or r13 = r12 r13
+
+Cycle        369 ----------------------------------------------------
+pc: 000002dc inst: (78069073) expanded: csrrw r 0 csr0x780 r13
+
+Cycle        370 ----------------------------------------------------
+pc: 000002e0 inst: (00010637) expanded: lui r12 0x10000
+
+Cycle        371 ----------------------------------------------------
+pc: 000002e4 inst: (00a60613) expanded: addi r12 = r12 0xa
+
+Cycle        372 ----------------------------------------------------
+pc: 000002e8 inst: (78061073) expanded: csrrw r 0 csr0x780 r12
+
+Cycle        373 ----------------------------------------------------
+pc: 000002ec inst: (01059613) expanded: slli r12 = r11 0x10
+
+Cycle        374 ----------------------------------------------------
+pc: 000002f0 inst: (01065613) expanded: srli r12 = r12 0x10
+
+Cycle        375 ----------------------------------------------------
+pc: 000002f4 inst: (000201b7) expanded: lui r 3 0x20000
+
+Cycle        376 ----------------------------------------------------
+pc: 000002f8 inst: (003661b3) expanded: or r 3 = r12 r 3
+
+Cycle        377 ----------------------------------------------------
+pc: 000002fc inst: (78019073) expanded: csrrw r 0 csr0x780 r 3
+
+Cycle        378 ----------------------------------------------------
+pc: 00000300 inst: (0105d613) expanded: srli r12 = r11 0x10
+
+Cycle        379 ----------------------------------------------------
+pc: 00000304 inst: (000301b7) expanded: lui r 3 0x30000
+
+Cycle        380 ----------------------------------------------------
+pc: 00000308 inst: (003661b3) expanded: or r 3 = r12 r 3
+
+Cycle        381 ----------------------------------------------------
+pc: 0000030c inst: (78019073) expanded: csrrw r 0 csr0x780 r 3
+
+Cycle        382 ----------------------------------------------------
+pc: 00000310 inst: (00010637) expanded: lui r12 0x10000
+
+Cycle        383 ----------------------------------------------------
+pc: 00000314 inst: (00a60613) expanded: addi r12 = r12 0xa
+
+Cycle        384 ----------------------------------------------------
+pc: 00000318 inst: (78061073) expanded: csrrw r 0 csr0x780 r12
+
+Cycle        385 ----------------------------------------------------
+pc: 0000031c inst: (780e1073) expanded: csrrw r 0 csr0x780 r28
+
+Cycle        386 ----------------------------------------------------
+pc: 00000320 inst: (0000006f) expanded: jal r 0 0x0
+
+Cycle        387 ----------------------------------------------------
+pc: 00000324 inst: (00000000) expanded: unsupport 0x0
+Branch instruction here
+missed_ppc: 00000324 inst: (080000000000c9000000c83) branch mispredicted: ExecInst { iType: J, dst: tagged Invalid , csr: tagged Invalid , data: 'h00000324, addr: 'h00000320, mispredict: True, brTaken: True }
+
+Cycle        388 ----------------------------------------------------
+pc: 00000320 inst: (0000006f) expanded: jal r 0 0x0
+
+Cycle        389 ----------------------------------------------------
+pc: 00000320 inst: (0000006f) expanded: jal r 0 0x0
+Branch instruction here
+
+Cycle        390 ----------------------------------------------------
+pc: 00000320 inst: (0000006f) expanded: jal r 0 0x0
+Branch instruction here
+
+Cycle        391 ----------------------------------------------------
+pc: 00000320 inst: (0000006f) expanded: jal r 0 0x0
+Branch instruction here
+
+Cycle        392 ----------------------------------------------------
+pc: 00000320 inst: (0000006f) expanded: jal r 0 0x0
+Branch instruction here
+
+Cycle        393 ----------------------------------------------------
+pc: 00000320 inst: (0000006f) expanded: jal r 0 0x0
+Branch instruction here
+
+Cycle        394 ----------------------------------------------------
+pc: 00000320 inst: (0000006f) expanded: jal r 0 0x0
+Branch instruction here
+
+Cycle        395 ----------------------------------------------------
+pc: 00000320 inst: (0000006f) expanded: jal r 0 0x0
+Branch instruction here
+
+Cycle        396 ----------------------------------------------------
+pc: 00000320 inst: (0000006f) expanded: jal r 0 0x0
+Branch instruction here
+
+Cycle        397 ----------------------------------------------------
+simulator calling $finish

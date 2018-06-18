@@ -1,0 +1,75 @@
+1. 
+					Cycles 			Insts			IPC
+					
+	median			4733			4015			0.848
+	
+	multiply		27007			20893			0.774
+	
+	qsort			146038			123928			0.849
+	
+	tower			6507			6096			0.937
+	
+	vvad			2706			2408			0.89
+	
+2. 	If the branch prediction is accurate in doExecute, then one instruction is executed in one cycle. If the branch prediction misses in doExecute, the d2e FIFO is cleared, so doExecute is idle on the next cycle while doFetch gets the correct instruction. Therefore, every miss incurs one dead cycle per instruction.
+
+	Cycles = Insts + branch_misses
+	
+	misprediction_rate = branch_misses/Insts = (Cycles - Insts)/Insts = 1/IPC - 1
+
+	accuracy = 1 - misprediction_rate = 2 - 1/IPC
+	
+					accuracy
+				
+	median			0.82
+	
+	multiply		0.71
+	
+	qsort			0.82
+	
+	tower			0.93
+	
+	vvad			0.88
+		
+3. 
+
+						Cycles			Insts			IPC			% improved
+	
+	median				4626			4015			0.868			2.36
+	
+	multiply			21481			20893			0.972			25.58
+	
+	qsort				140255			123928			0.884			4.12
+	
+	tower				6354			6096			0.959			2.35
+	
+	vvad				2409			2408			0.999			12.25
+
+4.  The number of cycles decreased for the bpred_* microbenchmarks except for bpred_bht whose cycle increased with the addition of the BTB. Therefore, the IPC increased for bpred_j and bpred_ras, but decreased for bpred_bht. 
+
+					IPC_BTB			IPC_without_BTB		% improved
+						
+	bpred_bht		0.77				0.835				-7.7	
+
+	bpred_j			0.99				0.515				92.1          
+
+	bpred_ras		0.79				0.692				14.4
+	
+	
+5. 9 hours
+
+6. 	
+
+	bpred_j: 20 misses
+		Almost all of the branch instructions in the code are unconditional jumps, so once the BTB has populated the vector with those jump locations, it will never mispredict the target for those PCs. So, the performance of bpred_j improved a lot with BTB.
+	
+	bpred_ras: 76 misses
+		I think the jl instructions are the reason for the performance improvement because once the BTB populates the vector with the jump locations, it will not mispredict the branch target for those PCs. The jr instructions might be the reason for mispredictions because they will not jump to the exact same location everytime since the value of ra changes.  
+		
+	bpred_bht: 302 misses
+		Almost all of the branch instructions are beqs, and only one of those beqs will be True on any complete loop (from loopstart back to loopstart) until a0 becomes 0 and the program ends. So even after the BTB stores the branch locations, when the PC loops back, it most likely will not branch to the location in the buffer. Since it is more likely that most of the beq instructions return false and the next correct instruction is in fact PC+4, the BTB makes bpred_bht less efficient.
+		
+7.	If the BTB were to store not just the branch target but also some measure of the likelihood of the instruction at that PC address taking the branch target, it will improve its performance.
+
+90/90 + bonus	
+	

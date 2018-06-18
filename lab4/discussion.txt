@@ -1,0 +1,62 @@
+1. What registers are read from and written to in each of the interface
+    methods of mkMyConflictFifo?
+
+notEmpty
+    read: empty
+    written: - 
+first
+    read:empty, deqP, data
+    written: -
+deq
+    read: empty, deqP, enqP
+    written: empty, full, deqP
+notFull
+    read: full
+    written: - 
+enq
+    read: full, enqP, deqP
+    written: empty, full, enqP,data
+clear
+    read: -
+    written: deqP, enqP, empty, full
+
+
+
+2. Fill the conflict Matrix for mkMyConflictFifo.
+
+           notEmpty   first   deq   notFull   enq   clear
+         +----------+-------+-----+---------+-----+-------+
+notEmpty |   CF     |   CF  |  <  |   CF    |  <  |   <   |
+         +----------+-------+-----+---------+-----+-------+
+first    |   CF     |   CF  |  <  |   CF    |  <  |   <   |
+         +----------+-------+-----+---------+-----+-------+
+deq      |    >     |   >   |  C  |    >    |  C  |   C   |
+         +----------+-------+-----+---------+-----+-------+
+notFull  |   CF     |   CF  |  <  |   CF    |  <  |   <   |
+         +----------+-------+-----+---------+-----+-------+
+enq      |    >     |   >   |  C  |    >    |  C  |   C   |
+         +----------+-------+-----+---------+-----+-------+
+clear    |    >     |   >   |  C  |    >    |  C  |   C   |
+         +----------+-------+-----+---------+-----+-------+
+
+
+
+3. Which conflicts from mkMyConflictFifo do not match the conflict-free FIFO
+    scheduling constraints?
+	
+	- enq C deq should be enq CF deq in the CF FIFO
+	- enq C clear should be enq < clear in the CF FIFO
+	- enq > notEmpty should be enq CF notEmpty in the CF FIFO
+	- enq > first should be enq CF first in the CF FIFO
+	- deq C clear should be deq < clear in the CF FIFO
+	- notFull < deq should be notFull CF deq in the CF FIFO
+
+4. In your design of the clear method in mkMyCFFifo, how did you force the
+    scheduling constraint {enq, deq} < clear?
+	
+	I replaced the registers with 2-port Ehrs, then I used port 0 for reads\writes that happen for the CF methods and port 1 for clear(). This way, clear() decides the final value of the registers on every cycle if it is requested.
+	
+5. 6 hours
+
+
+100%

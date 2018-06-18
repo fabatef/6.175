@@ -1,0 +1,5 @@
+1.	Exceptions can be raised by multiple instructions at various points in the pipeline. Also, a single instruction can raise multiple exceptions as it passes through each pipeline stage. So, the information about the raised exception on each stage has to be passed along with the instruction down to the writeback stage where the exception for the oldest valid instruction in the pipeline is processed. This means keeping track of the instruction's global epoch, local epoch for each pipeline stage, the cause of exception if a previous stage raised one and whether or not it is poisioned, and also more code per each stage to determine what bundle to pass to the next stage depending on what values those four variables take. Therefore, I'm thankful I don't have to write and debug that code!
+
+2. 2 hours 
+
+50/50

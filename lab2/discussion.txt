@@ -1,0 +1,7 @@
+1. Using my implementation of the fifo, the rules in the elastic pipeline can't fire concurrently since the fifo's deq and enq methods write into the same set of registers. Therefore, the bsv compiler schedules the rules one at a time, which increases execution cycle. Using the conflict-free fifo, the elastic pipeline rules can fire concurrently since canonicalize insures concurrent execution of deq and enq as long as the fifo is neither full nor empty. This cuts down the cycles of execution giving a better performance.  
+
+2. If it's an inelastic pipeline, every output from the input stream will arrive in constant intervals since data flow is synchronous. If it's an elastic pipeline, this behavior is not guranteed since the different pipeline stages are capable of firing independently as long as their condition is satisfied.
+
+3. 5 hours 
+
+100%
